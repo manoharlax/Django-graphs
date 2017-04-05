@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre><h2><B>Select a date :   </B></h2></pre>
+
+<form method="post" action="date.html">{% csrf_token %}
+        <select name="date">
+            {% for i in array %}
+                <option value={{ i }}>{{ i }}</option>
+            {% endfor %}
+        </select>
+        <input  type = "submit" value="Submit">
+    <br>
+    <br>
+</form>
+
+
+<h1><B> Details for Month : {{ mid1 }} </B></h1>
+
+{% if month %}
+<div data-width="300" data-height="300">
+{{ month|safe }}
+</div>
+{% endif %}
+
+
+</body>
+</html>
